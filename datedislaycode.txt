@@ -1,0 +1,101 @@
+using DateDisplay;
+using System;
+using static System.Console;
+
+namespace DateDisplay
+{
+    public class Date //why is this error occuring?
+    {
+        //get sets
+        public int Day { get; set; }
+        public int Month { get; set; }
+        public int Year { get; set; }
+        public string MonthName { get; set; }
+
+        public Date(int day, int month, int year)
+        {
+            this.Day = day;
+            this.Month = month;
+            this.Year = year;
+            
+            //should "this.MonthName be here?
+
+        }
+        public void DisplayDate(this.Day, this.Month, this.Year) //how do I pass the data members here?
+        {
+            
+            switch (this.Month)
+            {
+                case 1:
+                    this.MonthName = "January"; // in your example you used this.monthName, but took out the data member in the constructor. 
+                    WriteLine("Date:  " + this.MonthName + "," + this.Day + "," + this.Year);
+                    break;
+                case 2:
+                    this.MonthName = "February";
+                    WriteLine("Date:  " + this.MonthName + "," + this.Day + "," + this.Year); 
+                    break;
+                case 3:
+                    this.MonthName = "March";
+                    WriteLine("Date:  " + this.MonthName + "," + this.Day + "," + this.Year);
+                    break;
+                case 4:
+                    this.MonthName = "April";
+                    WriteLine("Date:  " + this.MonthName + "," + this.Day + "," + this.Year);
+                    break;
+                case 5:
+                    this.MonthName = "May";
+                    WriteLine("Date:  " + this.MonthName + "," + this.Day + "," + this.Year);
+                    break;
+                case 6:
+                    this.MonthName = "June";
+                    WriteLine("Date:  " + this.MonthName + "," + this.Day + "," + this.Year);
+                    break;
+                case 7:
+                    this.MonthName = "July";
+                    WriteLine("Date:  " + this.MonthName + "," + this.Day + "," + this.Year);
+                    break;
+                case 8:
+                    this.MonthName = "August";
+                    WriteLine("Date:  " + this.MonthName + "," + this.Day + "," + this.Year);
+                    break;
+                case 9:
+                    this.MonthName = "September";
+                    WriteLine("Date:  " + this.MonthName + "," + this.Day + "," + this.Year);
+                    break;
+                case 10:
+                    this.MonthName = "October";
+                    WriteLine("Date:  " + this.MonthName + "," + this.Day + "," + this.Year);
+                    break;
+                case 11:
+                    this.MonthName = "November";
+                    WriteLine("Date:  " + this.MonthName + "," + this.Day + "," + this.Year);
+                    break;
+                case 12:
+                    this.MonthName = "December";
+                    WriteLine("Date:  " + this.MonthName + "," + this.Day + "," + this.Year);
+                    break;
+                default:
+                    this.MonthName = "Invalid Month";
+                    WriteLine("Date:  " + this.MonthName + "," + this.Day + "," + this.Year);
+                    break;
+            }
+        public override string ToString()
+        {
+
+            return "Date: " + this.Day + "/" + this.Month + "/" + this.Year;
+
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+                //create new object
+                Date date = new Date(6, 26, 2020);
+                WriteLine(date);
+                DisplayDate(date);
+                date.ToString();
+
+        }    
+    }
+}

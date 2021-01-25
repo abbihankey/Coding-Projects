@@ -1,0 +1,157 @@
+//Try Parse
+string incomingData = "Hello";
+int parsedResult; 
+
+if (int.TryParse(incomingData, out parsedResult))
+{
+   //do something with the data. 
+}
+
+//Try Parse in while Loop *****USEFUL AF******
+int integerValue;
+string inStringValue;
+Write("Enter an integer value. ");
+inStringValue = ReadLine( );
+while (int.TryParse(inStringValue,
+out integerValue) == false)
+{
+WriteLine("Invalid input");
+Write("Please re-enter an integer value. ");
+inStringValue = ReadLine( );
+}
+
+//Define method
+class NumberManipulator {
+
+   public int FindMax(int num1, int num2) {
+      /* local variable declaration */
+      int result;
+
+      if (num1 > num2)
+         result = num1;
+      else
+         result = num2;
+
+      return result;
+
+//while Loop
+while (conditional expression)
+statement(s);
+
+//Counter controlled loop
+static void Main( )
+{
+	int sum = 0; 
+	int number = 1; 
+	while (number < 11) 
+	{ 
+		sum = sum + number; 
+		number++; 
+	} 
+	WriteLine("Sum of values " + 
+	"1 through 10" + 
+	" is " + sum); 
+	ReadKey( ); 
+
+//Sentinal Loop
+string inValue = ""; //Initialized to null
+Write("This program will let you enter");
+Write(" value after value. To Stop, enter");
+WriteLine(" −99");
+while (inValue!= "−99")
+{
+	Write("\nEnter value (−99 to exit): ");
+	inValue = ReadLine( );
+}
+
+//Sentinal Loop w Prime Read
+string inValue = ""; //Initialized to null
+int sum = 0,
+	intValue;
+Write("This program will let you enter");
+Write(" value after value. To Stop, enter");
+WriteLine(" −99");
+Write("\nEnter value (−99 to exit): ");
+inValue = ReadLine( ); // Priming read
+while (inValue!= "−99")
+{
+	if (int.TryParse(inValue, out intValue) == false)
+	WriteLine("Invalid input − 0 stored in " +
+						"intValue");
+	sum += intValue;
+	Write("Enter value(−99 to exit): ");
+	inValue = ReadLine( );
+}
+WriteLine("Total values entered {0}", sum);
+ReadKey( );
+}
+
+//Message Box (pg.340 for IDE ref)(p.342 button chart)
+MessageBox.Show( result, "1 − 10 and their squares", MessageBoxButtons.
+YesNoCancel);
+
+//State Controlled Loop using Y/N buttons
+bool moreData = true;
+while (moreData)
+{
+...
+// moreData is updated inside the loop when a condition
+// changes that indicates the loop should stop.
+if (MessageBox.Show("Do you want another number ?",
+				"State Controlled Loop",
+				MessageBoxButtons.YesNo,
+				MessageBoxIcon.Question)
+	== DialogResult.No)// Test to see if No clicked
+	{
+		moreData = false;
+	}
+}
+
+//Random number
+int s;
+Random numb = new Random( );
+s = numb.Next(100); 			// Returns positive number < 100. 100 repersents range. 
+
+//for Loop (pg. 349)
+for (statement; conditional expression; statement)
+statement;
+
+for (initialize; test; update)
+statement;
+
+//for Loop, prints 3 columns of numbers
+for (int counter = 0; counter < 11; counter++) //Line 1
+{
+	WriteLine("{0,5}\t{1,5}\t{2,5}", //Loop body
+		counter,
+		Math.Pow(counter,2),
+		Math.Pow(counter,3));
+}
+
+//do...while Loop (posttest)
+do
+{
+	statement;
+}
+while (conditional expression);
+
+int counter = 10;
+do // No semicolon on this line
+{
+	WriteLine(counter + "\t" + Math.Pow(counter, 2));
+	counter––;
+}
+while (counter > 0);
+
+//Break in nested loop
+int total = 0;
+for (int nValue = 0; nValue < 10; nValue++)
+{
+	if (nValue == 5)
+	{
+		break;
+	}
+	total += nValue;
+	Write(nValue + "\t");
+}
+WriteLine("\nTotal is equal to {0}.", total);
